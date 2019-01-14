@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ## Sample Map Widget
-My alma mater, [Wentworth Institute of Technology](https://wit.edu/)
+The location of my alma mater, [Wentworth Institute of Technology](https://wit.edu/)
 
 ```{r leafletExample}
 library(leaflet)
