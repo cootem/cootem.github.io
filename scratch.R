@@ -6,3 +6,7 @@
 
 library(dplyr)
 
+data(mtcars)
+
+with(mtcars, plot(mpg, wt))
+
