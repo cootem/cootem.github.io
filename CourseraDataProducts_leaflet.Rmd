@@ -1,0 +1,30 @@
+---
+title: "R Leaflet Example"
+author: "Michael Coote"
+date: "1/13/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Sample Map Widget
+My alma mater, [Wentworth Institute of Technology](https://wit.edu/)
+
+```{r leafletExample}
+library(leaflet)
+
+wentworthIcon <- makeIcon(
+  iconUrl = "https://wit.edu/sites/default/files/styles/scale_175w/public/default_images/wentworth-crest-color_0_0.png?itok=cALAtjCV",
+  iconWidth = 31*215/230, iconHeight = 31,
+  iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+
+m <- leaflet() %>% addTiles() %>%
+  addMarkers(lat=42.337018, lng=-71.094667, 
+             icon = wentworthIcon, 
+             popup = "Wentworth Institute of Technology")
+m
+```
+
