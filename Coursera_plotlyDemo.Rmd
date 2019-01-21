@@ -32,7 +32,9 @@ mtcars$am <- factor(mtcars$am,labels=c("Automatic","Manual"))
 mtcars$gear <- factor(mtcars$gear)
 mtcars$carb <- factor(mtcars$carb)
 
-table(mtcars$am) %>% kable(col.names = c("Transmission", "Frequency"))
+table(mtcars$am) %>% kable(col.names = c("Transmission", "Frequency")) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F, 
+                position = "center")
 
 ```
 
