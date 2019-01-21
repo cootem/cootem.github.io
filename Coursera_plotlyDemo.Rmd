@@ -1,0 +1,51 @@
+---
+title: "Coursera Plotly Demo"
+author: "Michael Coote"
+date: "1/20/2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, comment = NA)
+library(tidyverse)
+library(plotly)
+library(kableExtra)
+```
+
+## R Plotly
+
+This is an R Markdown Ioslides presentation that provides a demo of the Plotly
+graphing package. It was created as a requirment for the Johns Hopkins Coursera
+Data Science Specialization.
+
+The mtcars data set will be used for the demo. The relationship between
+manual and automatic transmission to miles per gallon (mpg) will be illustrated
+for the demo.
+
+## Cars by Transmission Type
+
+The number of cars in the dataset broken down by transmission type:
+```{r cars}
+mtcars$cyl <- factor(mtcars$cyl)
+mtcars$vs <- factor(mtcars$vs)
+mtcars$am <- factor(mtcars$am,labels=c("Automatic","Manual"))
+mtcars$gear <- factor(mtcars$gear)
+mtcars$carb <- factor(mtcars$carb)
+
+table(mtcars$am) %>% kable(col.names = c("Transmission", "Frequency"))
+
+```
+
+## MPG Boxplot
+The manual transmission, with a median of 
+**`r round(median(mtcars$mpg[mtcars$am == 'Manual']), 1)` MPG**, has the clear 
+advantage.
+```{r boxplot}
+
+plot_ly(y = mtcars$mpg[mtcars$am == 'Manual'], 
+        type = "box", name = "Manual") %>%
+  add_trace(y = mtcars$mpg[mtcars$am == 'Automatic'], name = "Automatic")
+```
+
+
+
