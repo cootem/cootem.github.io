@@ -2,3 +2,10 @@
 My personal repository site.
 
 [http://cootem.github.io./](http://cootem.github.io./)
+
+# Personal Project Pages
+
+Mostly course work here
+
+*   [R Leaflet Example](CourseraDataProducts_leaflet.html)
+*   [Plotly Demo](Coursera_plotlyDemo.html)
